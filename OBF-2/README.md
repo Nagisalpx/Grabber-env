@@ -1,16 +1,16 @@
-# BlankOBF (Version 2)
+# OBF (Version 2)
 
-**BlankOBF** is a tool designed to obfuscate Python programs, making them more challenging to understand for casual user. Please note that while obfuscation can deter casual users, determined individuals can still reverse engineer the code with effort. It's essential to understand that obfuscation does not provide security but rather adds a layer of complexity.
+**OBF** is a tool designed to obfuscate Python programs, making them more challenging to understand for casual user. Please note that while obfuscation can deter casual users, determined individuals can still reverse engineer the code with effort. It's essential to understand that obfuscation does not provide security but rather adds a layer of complexity.
 
 ## Features
-- **Python Obfuscation:** BlankOBF utilizes techniques to obscure Python code, making it less readable to human eyes.
+- **Python Obfuscation:** OBF utilizes techniques to obscure Python code, making it less readable to human eyes.
 - **Customization:** Offers various options to customize the obfuscation process, such as recursive obfuscation and inclusion of imports.
 - **Command-line Interface:** Convenient command-line interface for easy integration into your development workflow.
 
 ## Usage
 ### From command line:
 ```bash
-python BlankOBFv2.py [-h] --input PATH [--output PATH] [--recursive N] [--include_imports]
+python OBFv2.py [-h] --input PATH [--output PATH] [--recursive N] [--include_imports]
 ```
 - **-h, --help:** Show the help message and exit.
 - **--input PATH:** Specify the input file to be obfuscated.
@@ -20,7 +20,7 @@ python BlankOBFv2.py [-h] --input PATH [--output PATH] [--recursive N] [--includ
 
 ### From code:
 ```python
-from BlankOBFv2 import BlankOBFv2
+from OBFv2 import OBFv2
 
 # Your Python code to obfuscate
 code_to_obfuscate = """
@@ -30,8 +30,8 @@ def hello_world():
 hello_world()
 """
 
-# Instantiate BlankOBFv2 with your code
-obfuscator = BlankOBFv2(code=code_to_obfuscate, include_imports=False, recursion=1)
+# Instantiate OBFv2 with your code
+obfuscator = OBFv2(code=code_to_obfuscate, include_imports=False, recursion=1)
 
 # Obfuscate the code
 obfuscated_code = obfuscator.obfuscate()
