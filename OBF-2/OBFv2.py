@@ -1,5 +1,3 @@
-# Made by Blank-c (github/Blank-c)
-
 import os
 import ast
 import sys
@@ -10,7 +8,7 @@ import random
 import builtins
 import argparse
 
-class BlankOBFv2:
+class OBFv2:
     def __init__(self, code: str, include_imports: bool=False, recursion: int=1) -> None:
         self._code = code
         self._imports = []
@@ -91,7 +89,7 @@ class BlankOBFv2:
     def _remove_comments_and_docstrings(self) -> None:
         tree = ast.parse(self._code)
         tree.body.insert(0, ast.Expr(
-                    value=ast.Constant(":: You managed to break through BlankOBF v2; Give yourself a pat on your back! ::")
+                    value=ast.Constant(":: You managed to break through OBF v2; Give yourself a pat on your back! ::")
                 ))
         for index, node in enumerate(tree.body[1:]):
             
@@ -138,7 +136,7 @@ class BlankOBFv2:
     def _obfuscate_vars(self) -> None:
         # This class is only for modifying small code snippets in this obfuscator
         class Transformer(ast.NodeTransformer):
-            def __init__(self, outer: BlankOBFv2) -> None:
+            def __init__(self, outer: OBFv2) -> None:
                 self._outer = outer
 
             def rename(self, name: str) -> None:
@@ -361,7 +359,7 @@ exec(compile(__import__("zlib").decompress(__import__("base64").b64decode(bytes(
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog=os.path.basename(__file__),
-        description="BlankOBF v2: Obfuscates Python code to make it unreadable and hard to reverse."
+        description="OBF v2: Obfuscates Python code to make it unreadable and hard to reverse."
     )
     parser.add_argument("--input", "-i", required=True, help="The file containing the code to obfuscate", metavar="PATH")
     parser.add_argument("--output", "-o", required=False, 
@@ -385,7 +383,7 @@ def main() -> None:
     with open(args.input, "r", encoding="utf-8") as file:
         contents = file.read()
 
-    obfuscator = BlankOBFv2(contents, args.include_imports, int(args.recursive) if args.recursive else 1)
+    obfuscator = OBFv2(contents, args.include_imports, int(args.recursive) if args.recursive else 1)
     obfuscated_code = obfuscator.obfuscate()
 
     try:
